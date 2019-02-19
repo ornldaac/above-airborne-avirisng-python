@@ -1,4 +1,4 @@
-# Python: reading/writing data from AVIRIS-NG collected during ABoVE airborne campaigns
+# Python: Reading and manipulating hyperspectral imagery from AVIRIS-NG collected during ABoVE airborne campaigns
 
 *Date: February 19, 2019*  
 *Contact for ORNL DAAC: uso@daac.ornl.gov*  
