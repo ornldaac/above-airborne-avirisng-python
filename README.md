@@ -15,7 +15,7 @@ https://daac.ornl.gov/cgi-bin/dataset_lister.pl?p=34
 
 
 ![Spectra plotted for the center pixel](browse.png)
-*Spectral curve extracted for the center pixel of the reflectance granule used in the jupyter notebook.*
+*Spectral curves extracted for two NGEE Arctic permafrost monitoring sites.*
 
 ## Dataset
 
