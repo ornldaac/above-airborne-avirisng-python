@@ -7,19 +7,19 @@
 
 ## Overview
 
-The tutorial outlined in the [jupyter notebook](above-airborne-avirisng-python.ipynb) will outline a number of methods for manipulating hyperspectral imagery efficiently in Python.
+Hyperspectral imagery from the Airborne Visible InfraRed Imaging Spectrometer-Next Generation (AVIRIS-NG) was collected as part of the Arctic-Boreal Vulnerability Experiment (ABoVE) in 2017 and 2018 and archived at the ORNL DAAC. File sizes can be prohibitively large due to the high spectral resolution of the data. This tutorial aims to show users methods for manipulating hyperspectral imagery efficiently in Python.
 
-Read more about the Arctic Boreal Vulnerability Experiment:                    
+Read more about ABoVE:                    
 https://above.nasa.gov/       
 https://daac.ornl.gov/cgi-bin/dataset_lister.pl?p=34               
 
 
 ![Spectra plotted for the center pixel](browse.png)
-*Figure. Spectral curve extracted for the center pixel of the reflectance granule using in the jupyter notebook.*
+*Spectral curve extracted for the center pixel of the reflectance granule used in the jupyter notebook.*
 
 ## Dataset
 
-### ABoVE: Hyperspectral Imagery from AVIRIS-NG for Alaskan and Canadian Arctic, 2017    
+### ABoVE: Hyperspectral Imagery from AVIRIS-NG for Alaskan and Canadian Arctic   
 [10.3334/ORNLDAAC/1569](https://doi.org/10.3334/ORNLDAAC/1569)  
 
 **Abstract**     
@@ -28,9 +28,7 @@ This dataset provides Level 1 radiance and Level 2 surface reflectance measured 
 
 
 **Citation**     
-```
 Miller, C.E., R.O. Green, D.R. Thompson, A.K. Thorpe, M. Eastwood, I.B. Mccubbin, W. Olson-duvall, M. Bernas, C.M. Sarture, S. Nolte, L.M. Rios, M.A. Hernandez, B.D. Bue, and S.R. Lundeen. 2018. ABoVE: Hyperspectral Imagery from AVIRIS-NG for Alaskan and Canadian Arctic, 2017. ORNL DAAC, Oak Ridge, Tennessee, USA. https://doi.org/10.3334/ORNLDAAC/1569
-```
 
 Please see the **User Guide** for a comprehensive description of this dataset:              
 https://daac.ornl.gov/ABOVE/guides/ABoVE_Airborne_AVIRIS_NG.html
@@ -39,16 +37,17 @@ https://daac.ornl.gov/ABOVE/guides/ABoVE_Airborne_AVIRIS_NG.html
 ## Prerequisites           
 
 ### Python 3.x
-packages: tarfile, gdal, numpy, pandas, matplotlib
+math, tarfile, json, x, numpy, pandas, gdal/ogr, affine, matplotlib       
 
 ### Imagery
 Each flight line in the dataset has two corresponding granules, each stored in a zipped tarfile:            
-* level 1 radiance, e.g. ang20170624t185017.tar.gz            
-* level 2 reflectance, e.g. ang20170624t185017rfl.tar.gz     
+* Level 1 radiance, e.g. ang20180814t224053.tar.gz            
+* Level 2 reflectance, e.g. ang20180814t224053rfl.tar.gz     
 
-This tutorial works with the L2 reflectance image for a flight during late June of the 2017 campaign. **[Click here](https://daac.ornl.gov/daacdata/above/ABoVE_Airborne_AVIRIS_NG/data/ang20170624t185017rfl.tar.gz)** to download the granule. 
+This tutorial works with the L2 reflectance image for a flight in August during the 2018 campaign. Download the granule at the following link:      
+**[https://daac.ornl.gov/daacdata/above/ABoVE_Airborne_AVIRIS_NG/data/ang20180814t224053rfl.tar.gz](https://daac.ornl.gov/daacdata/above/ABoVE_Airborne_AVIRIS_NG/data/ang20180814t224053rfl.tar.gz)** 
 
-Each reflectance tarfile contains two pairs of ENVI binary image files (no extension) and accompanying header files (.hdr):
+Each reflectance tarfile contains two pairs of ENVI (Harris Geospatial) binary image files (no extension) and accompanying header files (.hdr):
 
 **Orthocorrected and atmospherically corrected reflectance data**               
 *angYYYYMMDDtHHNNSS_corr_VVV_img (& .hdr*)
@@ -65,18 +64,8 @@ We only use the orthocorrected and atmospherically corrected reflectance data in
 
 ## Tutorial
 
-### Clone this repository, download example granule, and start jupyter notebook
-
-NOTE: **[Follow these steps](https://wiki.earthdata.nasa.gov/display/EL/How+To+Access+Data+With+cURL+And+Wget)** to enable Earthdata authentication for wget or curl.
-```
-git clone <repolink>
-cd <reponame>
-
-curl -b ~/.cookies -c ~/.cookies -n -L -O https://daac.ornl.gov/daacdata/above/ABoVE_Airborne_AVIRIS_NG/data/ang20170624t185017rfl.tar.gz
-
-jupyter notebook
-```
-Or, **[click here](https://daac.ornl.gov/daacdata/above/ABoVE_Airborne_AVIRIS_NG/data/ang20170624t185017rfl.tar.gz)** to download the example granule.
+Download the example granule at the following link:      
+**[https://daac.ornl.gov/daacdata/above/ABoVE_Airborne_AVIRIS_NG/data/ang20180814t224053rfl.tar.gz](https://daac.ornl.gov/daacdata/above/ABoVE_Airborne_AVIRIS_NG/data/ang20180814t224053rfl.tar.gz)** 
 
 Open the notebook in your browser here:  
-[Tutorial](above-airborne-avirisng-python.ipynb)
+[above-airborne-avirisng-python.ipynb](above-airborne-avirisng-python.ipynb)
