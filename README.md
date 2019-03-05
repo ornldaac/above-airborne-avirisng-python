@@ -7,7 +7,7 @@
 
 ## Overview
 
-Hyperspectral imagery from the Airborne Visible InfraRed Imaging Spectrometer-Next Generation (AVIRIS-NG) was collected as part of the Arctic-Boreal Vulnerability Experiment (ABoVE) in 2017 and 2018 and archived at the ORNL DAAC. File sizes can be prohibitively large due to the high spectral resolution of the data. This tutorial aims to show users methods for manipulating hyperspectral imagery efficiently in Python.
+Hyperspectral imagery from the Airborne Visible InfraRed Imaging Spectrometer-Next Generation (AVIRIS-NG) was collected as part of the Arctic-Boreal Vulnerability Experiment (ABoVE) in 2017 and 2018 and archived at the ORNL DAAC. File sizes can be prohibitively large due to the large number of raster bands. This tutorial will show users some ways to work with the data in Python.
 
 Read more about ABoVE:                    
 https://above.nasa.gov/       
