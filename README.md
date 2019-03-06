@@ -11,7 +11,7 @@ Hyperspectral imagery from the Airborne Visible InfraRed Imaging Spectrometer-Ne
 
 Read more about ABoVE:                    
 https://above.nasa.gov/       
-https://daac.ornl.gov/cgi-bin/dataset_lister.pl?p=34               
+https://daac.ornl.gov/above           
 
 
 ![Spectra plotted for the center pixel](browse.png)
